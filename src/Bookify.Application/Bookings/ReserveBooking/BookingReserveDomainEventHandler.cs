@@ -1,6 +1,6 @@
 ﻿using Bookify.Application.Abstractions.Email;
 using Bookify.Domain.Booking;
-using Bookify.Domain.Booking.Events;
+using Bookify.Domain.Bookings.Events;
 using Bookify.Domain.Users;
 using MediatR;
 
