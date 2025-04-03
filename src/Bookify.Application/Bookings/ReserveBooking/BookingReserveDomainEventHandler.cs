@@ -32,7 +32,7 @@ internal sealed class BookingReserveDomainEventHandler : INotificationHandler<Bo
             throw new InvalidOperationException("Booking not found.");
         }
 
-        var user = await _userRepository.GetById(booking.UserId, cancellationToken);
+        var user = await _userRepository.GetByIdAsync(booking.UserId, cancellationToken);
 
         if (user is null)
         {
