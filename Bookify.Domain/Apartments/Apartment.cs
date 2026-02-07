@@ -1,8 +1,13 @@
+using Bookify.Domain.Abstractions;
+
 namespace Bookify.Domain.Apartments;
 
-public sealed class Apartment
+public sealed class Apartment:Entity
 {
-    public Guid Id { get; private set; }
+    Apartment(Guid id) : base(id)
+    {
+    }
+
     public string Name { get; private set; }
     public string Description { get; private set; }
     public string Country { get; private set; }
