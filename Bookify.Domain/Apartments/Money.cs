@@ -11,5 +11,9 @@ public record Money(decimal Amount, Currency Currency)
         return new Money(first.Amount + second.Amount, first.Currency);
     }
 
-    public static readonly Money Zero = new Money(decimal.Zero, Currency.None);
+    public static Money Zero() => new Money(decimal.Zero, Currency.None);
+    public bool IsZero() => this == Zero(Currency);
+    public static Money Zero(Currency currency) => new(0, currency);
+
+
 }
