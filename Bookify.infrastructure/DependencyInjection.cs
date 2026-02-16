@@ -7,6 +7,7 @@ using Bookify.Domain.Bookings;
 using Bookify.Domain.Users;
 using Bookify.infrastructure.Clock;
 using Bookify.Infrastructure.Data;
+using Bookify.infrastructure.Email;
 using Bookify.Infrastructure.Repositories;
 using Dapper;
 using Microsoft.EntityFrameworkCore;
@@ -22,7 +23,7 @@ public static class DependencyInjection
         IConfiguration configuration)
     {
         services.AddTransient<IDateTimeProvider, DateTimeProvider>();
-        services.AddTransient<IEmailService, IEmailService>();
+        services.AddTransient<IEmailService, EmailService>();
         
         var connectionString = configuration.GetConnectionString("Database")??
                                throw new ArgumentNullException(nameof(configuration));
