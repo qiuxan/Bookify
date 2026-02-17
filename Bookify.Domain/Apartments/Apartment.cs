@@ -9,6 +9,10 @@ public sealed class Apartment:Entity
     {
     }
 
+    private Apartment()
+    {
+    }
+
     public Name Name { get; private set; }
     public Description Description { get; private set; }
     public Address Address { get; private set; }
